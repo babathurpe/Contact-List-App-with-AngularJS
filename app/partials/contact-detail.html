@@ -1,0 +1,23 @@
+<div class="container-fluid">
+		<div class="row">
+		<br/>
+			<div class="panel panel-default">
+  					<div class="panel-body">
+		  	
+			<div class="col-xs-6 col-sm-3">
+				<h1>{{contact.first}}'s Contact</h1>				
+				<p><img class="img-thumbnail" ng-src="{{contact.imageUrl}}"></p>
+				<p><b>First Name: </b> {{contact.first}}</p>
+				<p><b>Last Name:</b> {{contact.last}}</p>
+				<p><b>Department:</b> {{contact.department}}</p>
+				<p><b>Office: </b>{{contact.office}}</p>
+				<p><b>Extension:</b> {{'519-542-7751 ext. ' + contact.extension}}</p>
+				<p><b>Manager: </b>{{contact.manager}}</p>
+				<p><b>Email:</b> <a href="mailto: {{contact.first + '.' + contact.last + '@lambtoncollege.ca'}}">{{contact.first + '.' + contact.last + '@lambtoncollege.ca'}}</a></p>
+				<br />
+		  	<a><button type="button" class="btn btn-primary" onclick="history.go(-1); return true;">Back</button></a>
+			</div>
+			</div>
+			</div>
+		</div>
+</div>

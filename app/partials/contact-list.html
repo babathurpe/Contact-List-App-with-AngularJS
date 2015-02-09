@@ -1,0 +1,42 @@
+<div class="container-fluid">
+		<div class="row">
+		  <div class="col-md-2">
+		  <br />
+		  		<div class="panel panel-default">
+  					<div class="panel-body">
+		  	
+		  <!-- Side Bar -->
+				<p>Search: <input ng-model = "query"> </p>
+					<p>Sort by:
+						<select ng-model = "orderProp">
+							<option value='first'>First Name</option>
+							<option value='last'>Last Name</option>
+							<option value='extension'>Extension</option>
+						</select> 
+					</p>
+					</div>
+					</div>
+			</div>
+				<!-- Center Div -->
+			<div class="col-md-10">
+				<p>
+					<table class='table table-hover'>
+						<tr class="info">
+							<th> Image </th>
+							<th> First Name </th>
+							<th> Last Name </th>
+							<th> E-mail </th>
+							<th>Phone Number</th>
+						</tr>
+						<tr class='contacts' ng-repeat = "contact in contacts | filter : query | orderBy : orderProp">
+							<td><a href = "#/contacts/{{contact.id}}" class="thumb"><img class="img-thumbnail" ng-src="{{contact.imageUrl}}"></a></td>
+							<td><a href="#/contacts/{{contact.id}}">{{contact.first}}</a></td>
+							<td class='last'>{{contact.last}}</td>
+							<td class='email'><a href="mailto: {{contact.first + '.' + contact.last + '@lambtoncollege.ca'}}">{{contact.first + '.' + contact.last + '@lambtoncollege.ca'}}</a></td>
+							<td class='phone'>{{'519-542-7751 ext. ' + contact.extension}}</td>
+						</tr>
+					</table>
+				</p>
+			</div>
+		</div>
+	</div>
